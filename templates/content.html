@@ -1,0 +1,152 @@
+{% load humanize %}
+
+<!-- featured categories start here  -->
+<div class="categories">
+    <div class="small-container">
+        <div class="row">
+            {% if category %}
+                {% for item in category %}
+                    <div class="col-3">
+                        <a href="{% url 'category' %}"><img src="{{item.image.url}}"></a>  
+                    </div>
+                {%  endfor %}
+            {% endif %}
+            
+        </div>
+    </div>
+    </div>
+    <!-- featured categories ends here  -->
+
+    <!-- featured products and latest products -->
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            {% if product %}
+                {% for item in product %}
+                    <div class="col-4">
+                        <a href="{% url 'prod_detail' item.id item.slug %}"><img src="{{ item.image.url}}"></a>
+                        <a href="{% url 'prod_detail' item.id item.slug %}"><h4>{{item.title}}</h4></a>
+                        <a href="{% url 'prod_detail' item.id item.slug %}" class="category">{{item.category}}</a>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <p class="price">
+                            {% if item.discount_price %}
+                                <del>#{{item.price | floatformat:2 | intcomma}}</del>
+                                <span>#{{ item.discount_price | floatformat:2 | intcomma }}</span>
+                            {% else %}
+                                <span>#{{ item.price | floatformat:2 | intcomma}}</span>
+                            {% endif %} 
+                        </p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <h2 class="title">Latest Products</h2>
+        <div class="row">
+            <div class="col-4">
+                <a href="product-details.html"><img src="images/ladies/6.jpg"></a>
+                <a href="product-details.html"><h4>Top and Skirt</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>#30,000</p>
+            </div>
+            <div class="col-4">
+                <a href="product-details.html"><img src="images/ladies/7.jpg"></a>
+                <a href="product-details.html"><h4>Brown Shifon Gown</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>#15,000</p>
+            </div>
+            <div class="col-4">
+                <a href="product-details.html"><img src="images/ladies/4.jpg"></a>
+                <a href="product-details.html"><h4>Brown Shifon Gown</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>#22,000</p>
+            </div>
+            <div class="col-4">
+                <a href="product-details.html"><img src="images/ladies/5.jpg"></a>
+                <a href="product-details.html"><h4>Brown Shifon Gown</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>#10,000</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <a href="product-details.html"><img src="images/ladies/2.jpg"></a>
+                <a href="product-details.html"><h4>Brown Shifon Gown</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>#10,000</p>
+            </div>
+            <div class="col-4">
+                <a href="product-details.html"><img src="images/ladies/3.jpg"></a>
+                <a href="product-details.html"><h4>Brown Shifon Gown</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>#15,000</p>
+            </div>
+            <div class="col-4">
+                <a href="product-details.html"><img src="images/ladies/4.jpg"></a>
+                <a href="product-details.html"><h4>Brown Shifon Gown</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>#22,000</p>
+            </div>
+            <div class="col-4">
+                <a href="product-details.html"><img src="images/ladies/5.jpg"></a>
+                <a href="product-details.html"><h4>Brown Shifon Gown</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>#10,000</p>
+            </div>
+        </div>
+    </div>
+        <!-- featured products and latest products ends here  -->
+

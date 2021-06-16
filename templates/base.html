@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block keywords %} Home {% endblock keywords %}">
+    <meta name="description" content="{% block description %} Home {% endblock description %}">
+    <link rel="stylesheet" href="{% static '' %}css/enosido.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>{% block title %} Home|Alist Storeapp {% endblock title %}</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="{{setting.icon.url}}">
+</head>
+<body>
+        <!-- header and banner combined  -->
+        {% block header %} {% endblock header%}
+        <!-- Header and banner done here  -->
+
+        <!-- content area  -->
+        {% block content %} {% endblock content%}
+        <!-- content area  -->
+        
+        <!-- offer products  -->
+        {% block offer %} {% endblock offer%}
+        <!-- offer products ends here  -->
+
+        <!-- Testimonials  -->
+        {% block testimonials %} {% endblock testimonials%}
+        <!-- Testimonial ends here  -->
+
+        <!-- brands  -->
+        {% block brands %} {% endblock brands%}
+        <!-- brands ends here  -->
+
+        <!-- footer  -->
+        {% block footer %} {% endblock footer%}
+        <!-- footer ends here  -->
+
+        <!-- js for togglemenu  -->
+        <script src="{% static '' %}js/main.js"></script>
+        <!-- js for togglemenu done  -->
+
+        <!-- js for product gallery  -->
+        <script src="{% static '' %}js/gallery.js"></script>
+        <!-- js product gallery done  -->
+
+        <!-- js for toggle form  -->
+        <script src="{% static '' %}js/formtoggle.js"></script>
+        <!-- js for toggle form ends here  -->
+    </div>
+</div>
+</body>
+</html>  
